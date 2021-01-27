@@ -12,6 +12,10 @@ import numpy as np
 import torch
 from torch.autograd import Variable
 
+from trains import Task
+task = Task.init(project_name="virtual_avatar", task_name="everybody_dance")
+
+
 opt = TrainOptions().parse()
 iter_path = os.path.join(opt.checkpoints_dir, opt.name, 'iter.txt')
 if opt.continue_train:
