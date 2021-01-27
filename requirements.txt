@@ -1,0 +1,6 @@
+torch
+dominate
+pillow
+scipy
+torchvision
+trains
