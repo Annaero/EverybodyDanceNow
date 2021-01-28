@@ -6,3 +6,4 @@ torchvision
 trains
 pyjwt==1.7.0
 tensorflow
+wget

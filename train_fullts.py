@@ -11,6 +11,7 @@ import os
 import numpy as np
 import torch
 from torch.autograd import Variable
+from datasets import prepare_dataset
 
 from trains import Task
 task = Task.init(project_name="virtual_avatar", task_name="everybody_dance")
@@ -33,6 +34,11 @@ if opt.debug:
     opt.niter = 1
     opt.niter_decay = 0
     opt.max_dataset_size = 10
+
+
+dataurl = opt.dataurl
+opt.dataroot = str(prepare_dataset(dataurl, opt.dataroot) / 'subject4' / 'train')
+
 
 data_loader = CreateDataLoader(opt)
 dataset = data_loader.load_data()
